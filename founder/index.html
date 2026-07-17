@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBX Rocket — Founder Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/work-management.css" />
+  <link rel="stylesheet" href="assets/css/team-organization.css" />
+  <link rel="stylesheet" href="assets/css/automation.css" />
+  <link rel="stylesheet" href="assets/css/attendance.css" />
+  <link rel="stylesheet" href="assets/css/analytics.css" />
+  <link rel="stylesheet" href="assets/css/rewards.css" />
+  <link rel="stylesheet" href="assets/css/success-journey.css" />
+  <link rel="stylesheet" href="assets/css/system.css" />
+  <link rel="stylesheet" href="assets/css/payroll.css" />
+  <link rel="stylesheet" href="assets/css/dashboard-command.css">
+  <link rel="stylesheet" href="assets/css/ai-copilot.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+<section id="onboarding" class="onboarding hidden">
+  <div class="onboarding-card">
+    <aside class="onboarding-side"><div class="logo">🚀 <strong>SBX<span>ROCKET</span></strong></div><div><p class="kicker">SET UP · ORGANISE · SCALE</p><h1>Build your founder workspace.</h1><p>Start fresh with a clean multi-business operating system.</p></div></aside>
+    <main class="onboarding-main"><div class="progress-row"><span id="stepText">Step 1 of 3</span><div class="progress"><i id="progressFill"></i></div></div>
+      <form id="setupForm">
+        <section class="setup-step active" data-step="1"><span class="pill">Workspace setup</span><h2>Create your company</h2><p>The parent workspace for all businesses.</p><label>Company name<input id="companyName" required placeholder="Example: Hridhyam Creation"></label><label>Industry<select id="industry"><option>Digital Agency</option><option>E-commerce</option><option>Professional Services</option><option>Retail</option><option>Other</option></select></label></section>
+        <section class="setup-step" data-step="2"><span class="pill">First business</span><h2>Add your first business</h2><p>You can add more later.</p><label>Business name<input id="businessName" required placeholder="Example: SBX Media"></label><label>Team size<select id="teamSize"><option>Just me</option><option>2–5 people</option><option>6–15 people</option><option>16–50 people</option><option>50+ people</option></select></label></section>
+        <section class="setup-step" data-step="3"><span class="pill">Founder profile</span><h2>Who owns this workspace?</h2><label>Founder name<input id="founderName" required placeholder="Your name"></label><label>Role<input id="founderRole" value="Founder"></label></section>
+        <div class="setup-actions"><button type="button" id="backBtn" class="btn secondary hidden">Back</button><button type="button" id="nextBtn" class="btn primary">Continue →</button></div>
+      </form>
+    </main>
+  </div>
+</section>
+<div id="app" class="app hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="rocket">🚀</span><div><strong>SBX<span>ROCKET</span></strong><small>Founder Operations OS</small></div><button id="collapseSidebar" title="Collapse sidebar">‹</button></div>
+    <div class="business-switcher business-switcher-static" id="businessSwitcher"><span id="businessInitial">S</span><div><strong id="businessNameSide">SBX Media</strong><small>Active business</small></div></div>
+    <nav id="mainNav">
+      <p>FOUNDER</p>
+      <button class="nav-item active" data-page="dashboard"><i>⌂</i><span>Founder Dashboard</span></button>
+      <button class="nav-item" data-page="businesses"><i>◇</i><span>Businesses</span></button>
+      <button class="nav-item" data-page="employees"><i>♙</i><span>Employees</span><b>0</b></button>
+      <button class="nav-item" data-page="departments"><i>⌘</i><span>Departments</span></button>
+      <button class="nav-item" data-page="roles"><i>♜</i><span>Roles & Permissions</span></button>
+      <p>WORK MANAGEMENT</p>
+      <button class="nav-item wm-nav" data-page="work-dashboard"><i>⌂</i><span>Work Dashboard</span></button>
+      <button class="nav-item wm-nav" data-page="task-library"><i>▤</i><span>Master Task Library</span></button>
+      <button class="nav-item wm-nav" data-page="workflow-builder"><i>⇄</i><span>Workflow Builder</span></button>
+      <button class="nav-item wm-nav" data-page="generated-tasks"><i>☑</i><span>Generated Tasks</span><b>0</b></button>
+      <button class="nav-item wm-nav" data-page="my-tasks"><i>✓</i><span>My Tasks</span><b>0</b></button>
+      <button class="nav-item wm-nav" data-page="calendar"><i>□</i><span>Calendar</span></button>
+      <p>TEAM & ORGANIZATION</p>
+      <button class="nav-item org-nav" data-page="brain-map"><i>◎</i><span>Company Brain Map</span></button>
+      <button class="nav-item org-nav" data-page="team-roles"><i>♟</i><span>Team & Roles</span></button>
+      <button class="nav-item org-nav" data-page="clients-projects"><i>◉</i><span>Clients & Projects</span></button>
+      <button class="nav-item org-nav" data-page="department-board"><i>✣</i><span>Department Board</span></button>
+      <p>AUTOMATION</p>
+      <button class="nav-item auto-nav" data-page="automations"><i>ϟ</i><span>Automations</span></button>
+      <button class="nav-item auto-nav" data-page="recurring-tasks"><i>◴</i><span>Recurring Tasks</span><b>0</b></button>
+      <button class="nav-item auto-nav" data-page="rules-engine"><i>♟</i><span>Rules Engine</span></button>
+      <p>TEAM OPERATIONS</p>
+      <button class="nav-item" data-page="attendance"><i>◷</i><span>Attendance</span></button>
+      <p>ANALYTICS</p>
+      <button class="nav-item analytics-nav" data-page="analytics-reports"><i>▥</i><span>Reports</span></button>
+      <button class="nav-item analytics-nav" data-page="performance"><i>⌁</i><span>Performance</span></button>
+      <button class="nav-item analytics-nav" data-page="insights"><i>⌘</i><span>Insights</span></button>
+      <p>AI COPILOT</p>
+      <button class="nav-item ai-nav" data-page="ai-copilot"><i>✦</i><span>Founder Copilot</span><b class="ai-live-badge">AI</b></button>
+      <p>RECOGNITION</p>
+      <button class="nav-item rewards-nav" data-page="points-rewards"><i>★</i><span>Points & Rewards</span></button>
+      <button class="nav-item journey-nav" data-page="success-journey"><i>✈</i><span>Success Journey</span></button>
+      <p>PAYROLL</p>
+      <button class="nav-item payroll-nav" data-page="payroll"><i>₹</i><span>Payroll</span></button>
+      <p>SYSTEM</p>
+      <button class="nav-item system-nav" data-page="system-settings"><i>⚙</i><span>Settings</span></button>
+      <button class="nav-item system-nav" data-page="integrations"><i>♧</i><span>Integrations</span></button>
+      <button class="nav-item system-nav" data-page="activity-log"><i>◌</i><span>Activity Log</span><b id="activityBadge">0</b></button>
+    </nav>
+    <div class="profile profile-static" id="founderProfileBar"><span id="founderAvatar">F</span><div class="profile-copy"><strong id="founderNameSide">Founder</strong><small id="founderRoleSide">Workspace owner</small></div><button type="button" id="founderLogoutButton" class="sidebar-logout-btn" aria-label="Log out">↪ <span>Log out</span></button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button id="menuBtn" class="mobile-menu">☰</button><div class="page-heading"><h1 id="pageTitle">Founder Dashboard</h1><p id="pageSubtitle">Your complete operating overview</p></div><div class="top-actions"><div class="search-wrap"><span>⌕</span><input id="globalSearch" placeholder="Search businesses, employees, tasks..."><div id="searchResults" class="search-results hidden"></div></div><button class="notification">◇<b>0</b></button><button class="copilot-top-btn" data-nav="ai-copilot">✦ Copilot</button><button class="quick" id="quickCreate">＋ Quick Create</button></div></header>
+    <section id="dashboard" class="page active founder-command-dashboard">
+      <div class="greeting-row"><div><h2 id="greeting">Good morning, Founder</h2><p id="greetingMeta">Founder · All Businesses</p></div><div class="date-box"><b id="dateDay">15</b><span id="dateMonth">JUL</span></div></div>
+      <div id="founderInsights" class="insight-strip founder-insight-strip"></div>
+
+      <div class="metric-grid six founder-kpis">
+        <article class="metric clickable" data-dashboard-nav="businesses"><span class="metric-icon purple">◇</span><div><small>Active Businesses</small><strong id="metricBusinesses">0</strong><p>Workspace units</p></div></article>
+        <article class="metric clickable" data-dashboard-nav="attendance"><span class="metric-icon green">◷</span><div><small>Present Today</small><strong id="metricPresentToday">0</strong><p id="metricPresentText">Attendance overview</p></div></article>
+        <article class="metric clickable" data-dashboard-nav="generated-tasks"><span class="metric-icon purple">✓</span><div><small>Open Tasks</small><strong id="metricOpenTasks">0</strong><p id="metricOpenTasksText">Active company work</p></div></article>
+        <article class="metric clickable" data-dashboard-nav="workflow-builder"><span class="metric-icon orange">◎</span><div><small>Pending Reviews</small><strong id="metricReview">0</strong><p>Awaiting approval</p></div></article>
+        <article class="metric clickable" data-dashboard-nav="generated-tasks"><span class="metric-icon red">!</span><div><small>Overdue</small><strong id="metricOverdue">0</strong><p>Needs attention</p></div></article>
+        <article class="metric clickable" data-dashboard-nav="payroll"><span class="metric-icon blue">₹</span><div><small>Payroll Due</small><strong id="metricPayrollDue">₹0</strong><p id="metricPayrollText">Current month</p></div></article>
+      </div>
+
+      <div class="founder-focus-grid">
+        <article class="panel founder-attention-panel">
+          <div class="panel-head"><div><h3>Today’s Attention</h3><p>Founder actions that need a decision</p></div><span class="soft-badge" id="attentionBadge">0 items</span></div>
+          <div id="todayAttentionContent" class="attention-list"></div>
+        </article>
+        <article class="panel founder-business-panel">
+          <div class="panel-head"><div><h3>Business Overview</h3><p>Health, work and travel milestone by business</p></div><button class="small-btn" data-nav="businesses">View all</button></div>
+          <div id="businessOverviewContent" class="business-overview-list"></div>
+        </article>
+        <article class="panel founder-team-panel">
+          <div class="panel-head"><div><h3>Team Overview</h3><p>Attendance, workload and recognition</p></div><button class="small-btn" data-nav="team-roles">Manage team</button></div>
+          <div id="teamOverviewContent"></div>
+        </article>
+      </div>
+
+      <div class="dashboard-grid founder-main-grid"><div class="left-column">
+        <article class="panel"><div class="panel-head"><div><h3>Priority Work</h3><p>Important tasks across all businesses</p></div><button class="small-btn" id="viewAllTasks">View all</button></div><div id="priorityWorkContent"></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Recent Activity</h3><p>Latest workspace updates</p></div><button class="small-btn" data-nav="activity-log">Audit log</button></div><div id="recentActivityContent"></div></article>
+      </div>
+      <aside class="right-column">
+        <article class="panel"><div class="panel-head"><div><h3>Quick Actions</h3><p>Common founder actions</p></div></div><div class="quick-grid founder-quick-grid">
+          <button data-create="tasks"><i>✓</i><b>Add Task</b><small>Assign company work</small></button>
+          <button data-nav="attendance"><i>◷</i><b>Approve Leave</b><small>Review team requests</small></button>
+          <button data-nav="payroll"><i>₹</i><b>Run Payroll</b><small>Review monthly salary</small></button>
+          <button data-nav="points-rewards"><i>★</i><b>Add Reward</b><small>Recognise performance</small></button>
+          <button data-nav="success-journey"><i>✈</i><b>Update Journey</b><small>Update travel milestone</small></button>
+          <button data-nav="automations"><i>ϟ</i><b>Automations</b><small>Review active rules</small></button>
+        </div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Business Health</h3><p>Overall operating readiness</p></div><span class="status-pill" id="healthStatus">SETUP</span></div><div class="health-score"><div class="ring" id="healthRing"><strong id="healthScore">20</strong><span>/100</span></div><div><b id="healthLabel">Getting started</b><p id="healthMessage">Complete your setup.</p></div></div><div class="health-lines" id="healthLines"></div></article>
+      </aside></div>
+
+      <div class="module-summary-grid">
+        <article class="module-summary-card"><div class="module-summary-head"><span class="summary-icon attendance">◷</span><div><h3>Attendance</h3><p>Today’s team status</p></div><button data-nav="attendance">Open</button></div><div id="attendanceSummary" class="summary-stats"></div></article>
+        <article class="module-summary-card"><div class="module-summary-head"><span class="summary-icon automation">ϟ</span><div><h3>Automation</h3><p>Rules and workflow activity</p></div><button data-nav="automations">Open</button></div><div id="automationSummary" class="summary-stats"></div></article>
+        <article class="module-summary-card"><div class="module-summary-head"><span class="summary-icon recognition">★</span><div><h3>Recognition</h3><p>Points, rewards and journey</p></div><button data-nav="points-rewards">Open</button></div><div id="recognitionSummary" class="summary-stats"></div></article>
+        <article class="module-summary-card founder-ai-summary"><div class="module-summary-head"><span class="summary-icon ai">⌘</span><div><h3>Founder Insight</h3><p>Operational recommendation</p></div><button data-nav="insights">Insights</button></div><div id="founderAiSummary"></div></article>
+      </div>
+    </section>
+    <section id="genericPage" class="page"><div class="module-toolbar"><div><h2 id="moduleTitle"></h2><p id="moduleDescription"></p></div><div class="toolbar-actions" id="toolbarActions"></div></div><div id="moduleContent"></div></section>
+  </main>
+</div>
+<div id="quickModal" class="modal hidden"><div class="modal-card compact"><button class="modal-close" data-close="quickModal">×</button><span class="pill">Quick create</span><h2>Create something</h2><div class="modal-options"><button data-create="businesses">◇ <span><b>Business</b><small>Add another business</small></span></button><button data-create="employees">♙ <span><b>Employee</b><small>Add a team member</small></span></button><button data-create="tasks">✓ <span><b>Task</b><small>Create and assign work</small></span></button><button data-create="departments">⌘ <span><b>Department</b><small>Organise your team</small></span></button><button data-create="task-library">▤ <span><b>SOP / Task Template</b><small>Reusable process</small></span></button><button data-create="calendar">□ <span><b>Calendar Event</b><small>Add meeting or deadline</small></span></button></div></div></div>
+<div id="entityModal" class="modal hidden"><form id="entityForm" class="modal-card entity-form"><div class="modal-fixed-head"><button type="button" class="modal-close" data-close="entityModal">×</button><span class="pill" id="entityPill">Create</span><h2 id="entityTitle"></h2><p id="entityDescription"></p></div><div id="entityFields" class="entity-fields"></div><div class="form-actions"><button type="button" class="btn secondary" data-close="entityModal">Cancel</button><button type="submit" class="btn primary" id="entitySave">Save</button></div></form></div>
+<div id="viewModal" class="modal hidden"><div class="modal-card view-card"><button class="modal-close" data-close="viewModal">×</button><div id="viewContent"></div></div></div>
+<script type="module" src="../firebase/founder-bootstrap.js"></script>
+</body></html>
