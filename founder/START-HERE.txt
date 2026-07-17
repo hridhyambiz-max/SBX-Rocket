@@ -1,2 +1,0 @@
-Extract in a new empty folder and open index.html.
-Payroll is placed directly above SYSTEM in the sidebar.
